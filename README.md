@@ -1,2 +1,1 @@
-# members-only
-TOP - Members Only
+# TOP - Educational Project - Members Only
