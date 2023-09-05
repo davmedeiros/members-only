@@ -5,11 +5,11 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 
-exports.user_create_get = (req, res, next) => {
+exports.user_sign_up_get = (req, res, next) => {
   res.render('sign_up', { title: 'Sign Up' });
 };
 
-exports.user_create_post = [
+exports.user_signup_post = [
   body('name')
     .trim()
     .isLength({ min: 1 })
