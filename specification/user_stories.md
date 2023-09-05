@@ -2,25 +2,23 @@
 
 ## Create
 
-- [ ] The user can create an account.
-- [ ] The user can write posts.
+- [ ] Any user can create an account.
+- [ ] Only a user with membership status can can write posts.
 
 ## Read
 
-- [ ] The user can login.
-- [ ] The user can read posts.
+- [ ] Any user can login.
+- [ ] Any user can read posts.
 - [ ] The poster's name is hidden to non members.
-- [ ] Members can see the poster's name.
+- [ ] Only members can see the poster's name.
 
 ## Update
 
-- [ ] The user can change their name, username, password and cancel their membership.
-- [ ] The user can request for approval to become a member.
-- [ ] The admin can approve a user's request for membership.
-- [ ] The admin can change user's membership status without the need for a request.
+- [ ] Any user can change their name, username, password and cancel their membership.
+- [ ] Any user can enter a club code to become a member.
 
 ## Delete
 
-- [ ] The user can delete their account.
-- [ ] The user can delete their message.
+- [ ] Any user can delete their account.
+- [ ] Any user can delete their message. (users who canceled their membership still have control over their data)
 - [ ] When a user gets deleted, all their messages get deleted too.
