@@ -6,7 +6,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 
 exports.user_create_get = (req, res, next) => {
-  res.render('user_sign_up', { title: 'Sign Up' });
+  res.render('sign_up', { title: 'Sign Up' });
 };
 
 exports.user_create_post = [
@@ -26,7 +26,7 @@ exports.user_create_post = [
     .escape()
     .withMessage('Username cannot be empty.'),
 
-  asyncHandler(async (req, req, next) => {
+  asyncHandler(async (req, res, next) => {
     bcrypt.hash(req.body.password, 10, async (err, hashedPassword) => {
       if (!err) {
         const errors = validationResult(req);
