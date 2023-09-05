@@ -11,7 +11,7 @@ const UserSchema = new Schema({
 });
 
 UserSchema.virtual('url').get(function () {
-  return `/user/${this._id}`;
+  return `/user/${this.username}`;
 });
 
 UserSchema.virtual('full_name').get(function () {
