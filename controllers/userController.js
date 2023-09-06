@@ -69,3 +69,43 @@ exports.user_profile_get = asyncHandler(async (req, res, next) => {
 
   res.render('profile', { title: 'Profile', user: user });
 });
+
+exports.user_become_member_get = asyncHandler(async (req, res, next) => {
+  const user = await User.findOne({ _id: req.params.id }).exec();
+
+  if (!user) {
+    const err = new Error('User not found');
+    err.status = 404;
+    return next(err);
+  }
+
+  res.render('become_member', { title: 'Become Member' });
+});
+
+exports.user_become_member_post = [
+  body('code')
+    .trim()
+    .isLength({ min: 6, max: 6 })
+    .escape()
+    .withMessage('Club codes are composed of 6 characters.'),
+
+  asyncHandler(async (req, res, next) => {
+    const errors = validationResult(req);
+
+    const user = new User({
+      is_member: req.body.code === 'M3MB3R',
+      _id: req.params.id,
+    });
+
+    if (!errors.isEmpty()) {
+      res.render('become_member', {
+        title: 'Become Member',
+        errors: errors.array(),
+      });
+      return;
+    } else {
+      const updatedUser = await User.findByIdAndUpdate(req.params.id, user, {});
+      res.redirect(updatedUser.url);
+    }
+  }),
+];

@@ -6,4 +6,4 @@ block content
   p= user.full_name
   p= user.is_member ? 'Member' : 'Visitor'
   if currentUser && currentUser.username === user.username
-    a(href="/become-member") Become Member
+    a(href=`/become-member/${currentUser._id}`) Become Member

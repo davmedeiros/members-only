@@ -1,0 +1,12 @@
+extends minimalist_layout 
+
+block content 
+  h1= title 
+  form(action="", method="post") 
+    label(for="code") Club Code
+    input#code(type="text", name="code")
+    button(type="submit") Confirm
+  if errors
+    ul
+      for error in errors
+        li!= error.msg
