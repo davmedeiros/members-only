@@ -1,6 +1,9 @@
 extends minimalist_layout
   
 block content
-  h1= title
-  a(href="/sign-up") Sign Up 
-  a(href="/login") Login
+  if currentUser
+    h1 Welcome back #{currentUser.username}
+  else 
+    h1= title
+    a(href="/sign-up") Sign Up 
+    a(href="/login") Login
