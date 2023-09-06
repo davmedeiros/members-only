@@ -5,14 +5,14 @@ block content
   form(action="", method="post")
     fieldset 
       label(for="name") Name
-      input#name(type="text", name="name")
+      input#name(type="text", name="name" autocomplete="given-name")
       label(for="surname") Surname
-      input#surname(type="text", name="surname")
+      input#surname(type="text", name="surname" autocomplete="family-name")
     fieldset 
       label(for="username") Username
-      input#username(type="text", name="username")
+      input#username(type="text", name="username" autocomplete="username")
       label(for="password") Password
-      input#password(type="password", name="password")
+      input#password(type="password", name="password" autocomplete="new-password")
     button(type="submit") Sign Up
 
 
