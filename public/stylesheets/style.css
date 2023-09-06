@@ -16,6 +16,25 @@
   --color-omega: #fb8500;
 }
 
+input,
+textarea,
+button {
+  font-family: inherit;
+}
+
 body {
   min-height: 100svh;
+}
+
+a.button,
+button {
+  display: inline;
+  text-decoration: none;
+  color: black;
+  background-color: var(--color-alpha);
+  border: none;
+  border-radius: 11px;
+  padding: 10px 30px;
+  font-size: 1rem;
+  cursor: pointer;
 }
