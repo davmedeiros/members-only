@@ -57,3 +57,15 @@ exports.user_signup_post = [
 exports.user_login_get = (req, res, next) => {
   res.render('login', { title: 'Login' });
 };
+
+exports.user_profile_get = asyncHandler(async (req, res, next) => {
+  const user = await User.findOne({ username: req.params.username }).exec();
+
+  if (!user) {
+    const err = new Error('User not found');
+    err.status = 404;
+    return next(err);
+  }
+
+  res.render('profile', { title: 'Profile', user: user });
+});
