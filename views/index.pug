@@ -3,6 +3,7 @@ extends minimalist_layout
 block content
   if currentUser
     h1 Welcome back #{currentUser.username}
+    a(href="/logout") Log Out 
   else 
     h1= title
     a(href="/sign-up") Sign Up 

@@ -20,6 +20,7 @@ async function main() {
 const indexRouter = require('./routes/index');
 const signUpRouter = require('./routes/signUp');
 const loginRouter = require('./routes/login');
+const logoutRouter = require('./routes/logout');
 
 const app = express();
 
@@ -44,6 +45,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter);
 app.use('/sign-up', signUpRouter);
 app.use('/login', loginRouter);
+
 app.post(
   '/login',
   passport.authenticate('local', {
@@ -51,6 +53,8 @@ app.post(
     failureRedirect: '/login',
   })
 );
+
+app.use('/logout', logoutRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
