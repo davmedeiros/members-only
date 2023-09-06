@@ -4,7 +4,4 @@ block content
   h1= title
   p @#{user.username}
   p= user.full_name
-  if user.is_member 
-    p Member 
-  else 
-    p Visitor
+  p= user.is_member ? 'Member' : 'Visitor'
