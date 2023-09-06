@@ -4,6 +4,7 @@ block content
   if currentUser
     h1 Welcome back #{currentUser.username}
     a(href="/logout") Log Out 
+    a(href=currentUser.url) Profile
   else 
     h1= title
     a(href="/sign-up") Sign Up 

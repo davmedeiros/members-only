@@ -5,3 +5,5 @@ block content
   p @#{user.username}
   p= user.full_name
   p= user.is_member ? 'Member' : 'Visitor'
+  if currentUser && currentUser.username === user.username
+    a(href="/become-member") Become Member
