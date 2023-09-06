@@ -3,7 +3,7 @@ extends panel_layout
 block panel 
   if currentUser && !currentUser.is_member && currentUser.username === user.username
     a(href=`/become-member/${currentUser._id}`) Become Member
-  a(href=`/settings/${currentUser.username}`) Settings
+    a(href=`/settings/${currentUser.username}`) Settings
 block content 
   h1= title
   .user-info 

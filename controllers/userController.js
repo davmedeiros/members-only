@@ -46,7 +46,11 @@ exports.user_signup_post = [
           return;
         } else {
           await user.save();
-          res.redirect(user.url);
+          res.redirect('/login');
+          // res.render('login', {
+          //   title: 'Login',
+          //   message: 'Your user was created, please login now.',
+          // });
         }
       } else {
         return next(err);

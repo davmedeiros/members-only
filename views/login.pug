@@ -2,6 +2,8 @@ extends minimalist_layout
   
 block content
   h1= title
+  if message 
+    p= message
   form(action="", method="post")
     fieldset 
       label(for="username") Username
