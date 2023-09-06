@@ -26,6 +26,14 @@ body {
   min-height: 100svh;
 }
 
+a {
+  color: var(--color-beta);
+}
+
+a:visited {
+  color: var(--color-omega);
+}
+
 a.button,
 button {
   display: inline;
@@ -37,4 +45,37 @@ button {
   padding: 10px 30px;
   font-size: 1rem;
   cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all 0.5s ease;
+}
+
+a.button:hover,
+button:hover {
+  background-color: var(--color-beta);
+  transform: scale(1.1);
+}
+
+.user-links {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-around;
+}
+
+form {
+  display: grid;
+  gap: 20px;
+}
+
+fieldset {
+  border: none;
+  display: grid;
+  gap: 10px;
+}
+
+input {
+  padding: 8px;
+  border: none;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
 }

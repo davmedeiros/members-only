@@ -3,10 +3,11 @@ extends minimalist_layout
 block content
   if currentUser
     h1 Welcome back, #{currentUser.full_name}!
-    a(href="/logout") Log Out 
-    a(href=currentUser.url) Profile
-    a(href="/forum") Forum
+    .user-links 
+      a(href="/logout") Log Out 
+      a(href=currentUser.url) Profile
+      a(href="/forum") Forum
   else 
     h1= title
-    a(href="/sign-up") Sign Up 
     a.button(href="/login") Login
+    a(href="/sign-up") Sign Up 
