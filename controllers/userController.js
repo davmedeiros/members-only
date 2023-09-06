@@ -2,6 +2,7 @@ const User = require('../models/user');
 const asyncHandler = require('express-async-handler');
 const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
+require('dotenv').config();
 
 exports.user_sign_up_get = (req, res, next) => {
   res.render('sign_up', { title: 'Sign Up' });
@@ -93,7 +94,7 @@ exports.user_become_member_post = [
     const errors = validationResult(req);
 
     const user = new User({
-      is_member: req.body.code === 'M3MB3R',
+      is_member: req.body.code === process.env.SECRET_CODE,
       _id: req.params.id,
     });
 
