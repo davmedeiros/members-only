@@ -57,33 +57,3 @@ exports.user_signup_post = [
 exports.user_login_get = (req, res, next) => {
   res.render('login', { title: 'Login' });
 };
-
-// exports.user_login_post = [
-//   body('username')
-//     .trim()
-//     .isLength({ min: 1 })
-//     .escape()
-//     .withMessage('Enter your username.'),
-//   body('password')
-//     .trim()
-//     .isLength({ min: 1 })
-//     .withMessage('Enter your password.'),
-
-//   asyncHandler(async (req, res, next) => {
-//     const errors = validationResult(req);
-
-//     if (!errors.isEmpty()) {
-//       res.render('login', {
-//         title: 'Login',
-//         errors: errors.array(),
-//       });
-//       return;
-//     } else {
-//       await passport.authenticate('local', {
-//         successRedirect: '/',
-//         failureRedirect: '/fail',
-//       });
-//       // next();
-//     }
-//   }),
-// ];
