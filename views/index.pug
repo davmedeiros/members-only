@@ -2,7 +2,7 @@ extends minimalist_layout
   
 block content
   if currentUser
-    h1 Welcome back #{currentUser.username}
+    h1 Welcome back, #{currentUser.full_name}!
     a(href="/logout") Log Out 
     a(href=currentUser.url) Profile
     a(href="/forum") Forum
