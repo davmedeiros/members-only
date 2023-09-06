@@ -1,10 +1,12 @@
 extends panel_layout
 
 block panel 
-block content 
-  h1= title
-  p @#{user.username}
-  p= user.full_name
-  p= user.is_member ? 'Member' : 'Visitor'
   if currentUser && !currentUser.is_member && currentUser.username === user.username
     a(href=`/become-member/${currentUser._id}`) Become Member
+  a(href=`/settings/${currentUser.username}`) Settings
+block content 
+  h1= title
+  .user-info 
+    p @#{user.username}
+    p= user.full_name
+    p= user.is_member ? 'Member' : 'Visitor'

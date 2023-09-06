@@ -1,0 +1,36 @@
+body {
+  display: grid;
+  grid-template-columns: 300px auto;
+}
+
+aside {
+  background-color: var(--color-gamma);
+  display: grid;
+  grid-auto-rows: 50px;
+}
+
+aside > a,
+aside > a:visited {
+  text-decoration: none;
+  color: white;
+  display: grid;
+  place-items: center;
+  transition: background-color 0.5s ease;
+}
+
+aside > a:hover {
+  background-color: var(--color-beta);
+}
+
+main {
+  display: grid;
+  padding: 20px;
+  grid-template-rows: 50px 1fr 100px;
+  gap: 20px;
+}
+
+.user-info {
+  display: grid;
+  grid-auto-rows: 40px;
+  gap: 10px;
+}
