@@ -46,11 +46,7 @@ exports.user_signup_post = [
           return;
         } else {
           await user.save();
-          res.redirect('/login');
-          // res.render('login', {
-          //   title: 'Login',
-          //   message: 'Your user was created, please login now.',
-          // });
+          res.redirect('/login?message=Your account was created, login now.');
         }
       } else {
         return next(err);
@@ -60,7 +56,8 @@ exports.user_signup_post = [
 ];
 
 exports.user_login_get = (req, res, next) => {
-  res.render('login', { title: 'Login' });
+  console.log(req.query.message);
+  res.render('login', { title: 'Login', message: req.query.message });
 };
 
 exports.user_profile_get = asyncHandler(async (req, res, next) => {
