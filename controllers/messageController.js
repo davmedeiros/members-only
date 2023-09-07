@@ -4,7 +4,7 @@ const asyncHandler = require('express-async-handler');
 const { body, validationResult } = require('express-validator');
 
 exports.message_view_get = asyncHandler(async (req, res, next) => {
-  const messages = await Message.find().exec();
+  const messages = await Message.find().populate('user').exec();
   res.render('forum', { title: 'Forum', messages: messages });
 });
 
