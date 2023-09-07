@@ -22,7 +22,8 @@ const signUpRouter = require('./routes/signUp');
 const loginRouter = require('./routes/login');
 const logoutRouter = require('./routes/logout');
 const profileRouter = require('./routes/profile');
-const becomeMember = require('./routes/becomeMember');
+const becomeMemberRouter = require('./routes/becomeMember');
+const forumRouter = require('./routes/forum');
 
 const app = express();
 
@@ -58,7 +59,8 @@ app.post(
 
 app.use('/logout', logoutRouter);
 app.use('/profile', profileRouter);
-app.use('/become-member', becomeMember);
+app.use('/become-member', becomeMemberRouter);
+app.use('/forum', forumRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

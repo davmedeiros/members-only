@@ -1,0 +1,24 @@
+extends panel_layout
+  
+block panel  
+block content
+  h1= title
+  if messages 
+    each message in messages 
+      .message 
+        h2= message.title 
+        p= message.timestamp
+        p= message.text 
+        p By #{message.user.username}
+  form(action="", method="post")
+    fieldset 
+      label(for="title") Title
+      input#title(type="text", name="title" autocomplete="off")
+      label(for="text") Message
+      input#text(type="text", name="text" autocomplete="off")
+    button(type="submit") Post
+  if errors
+    ul
+      for error in errors
+        li!= error.msg
+

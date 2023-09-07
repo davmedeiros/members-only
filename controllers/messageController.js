@@ -2,11 +2,11 @@ const User = require('../models/user');
 const Message = require('../models/message');
 const asyncHandler = require('express-async-handler');
 const { body, validationResult } = require('express-validator');
-const message = require('../models/message');
 
-exports.message_view_get = (req, res, next) => {
-  res.send('Not yet implemented');
-};
+exports.message_view_get = asyncHandler(async (req, res, next) => {
+  const messages = await Message.find().exec();
+  res.render('forum', { title: 'Forum', messages: messages });
+});
 
 exports.message_create_post = [
   body('text')
@@ -18,10 +18,12 @@ exports.message_create_post = [
   asyncHandler(async (req, res, next) => {
     const errors = validationResult(req);
 
+    console.log('user: ' + req.user);
+
     const message = new Message({
       title: req.body.title,
       text: req.body.text,
-      user: req.body.currentUser,
+      user: req.user,
     });
 
     if (!errors.isEmpty()) {
@@ -32,7 +34,7 @@ exports.message_create_post = [
       return;
     } else {
       await message.save();
-      res.render('forum', { title: 'Forum' });
+      res.redirect('forum');
     }
   }),
 ];
