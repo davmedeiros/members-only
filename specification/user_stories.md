@@ -3,14 +3,14 @@
 ## Create
 
 - [x] Any user can create an account.
-- [ ] Only a user with membership status can can write posts.
+- [x] Any user write posts.
 
 ## Read
 
 - [x] Any user can login.
-- [ ] Any user can read posts.
-- [ ] The poster's name is hidden to non members.
-- [ ] Only members can see the poster's name.
+- [x] Any user can read posts.
+- [x] The poster's name is hidden to non members.
+- [x] Only members can see the poster's name and date.
 
 ## Update
 
@@ -20,5 +20,5 @@
 ## Delete
 
 - [ ] Any user can delete their account.
-- [ ] Any user can delete their message. (users who canceled their membership still have control over their data)
+- [ ] Only admins can delete individual messages.
 - [ ] When a user gets deleted, all their messages get deleted too.
