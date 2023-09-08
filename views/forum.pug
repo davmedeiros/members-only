@@ -3,13 +3,14 @@ extends panel_layout
 block panel  
 block content
   h1= title
+  .messages
   if messages 
     each message in messages 
       .message 
         h2= message.title 
         p= message.timestamp
         p= message.text 
-        p By #{message.user.username}
+        p By @#{message.user.username}
   form(action="", method="post")
     fieldset 
       label(for="title") Title

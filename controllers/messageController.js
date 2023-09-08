@@ -12,7 +12,6 @@ exports.message_create_post = [
   body('text')
     .trim()
     .isLength({ min: 1 })
-    .escape()
     .withMessage(`Can't post empty messages.`),
 
   asyncHandler(async (req, res, next) => {
