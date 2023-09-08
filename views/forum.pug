@@ -11,6 +11,8 @@ block content
         p= currentUser.is_member ? message.timestamp : '---'
         p= message.text 
         p By @#{currentUser.is_member ? message.user.username : '---'}
+        if currentUser.is_admin 
+          button.subtle-button(type="submit") Delete
   form(action="", method="post")
     fieldset 
       label(for="title") Title
