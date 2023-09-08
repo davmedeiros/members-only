@@ -8,7 +8,7 @@ block content
     each message in messages 
       .message 
         h2= message.title 
-        p= message.timestamp
+        p= currentUser.is_member ? message.timestamp : '---'
         p= message.text 
         p By @#{currentUser.is_member ? message.user.username : '---'}
   form(action="", method="post")
