@@ -37,3 +37,8 @@ exports.message_create_post = [
     }
   }),
 ];
+
+exports.message_delete_post = asyncHandler(async (req, res, next) => {
+  await Message.findByIdAndRemove(req.params.id);
+  res.redirect('/forum');
+});

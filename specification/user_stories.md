@@ -20,5 +20,5 @@
 ## Delete
 
 - [ ] Any user can delete their account.
-- [ ] Only admins can delete individual messages.
+- [x] Only admins can delete individual messages.
 - [ ] When a user gets deleted, all their messages get deleted too.
