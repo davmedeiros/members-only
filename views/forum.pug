@@ -14,8 +14,8 @@ block content
         if currentUser.is_admin 
           form(action=`/message/delete/${message._id}`, method="post") 
             button.subtle-button(type="submit") Delete
-  form(action="", method="post")
-    fieldset 
+  form.new-message-box(action="", method="post")
+    fieldset
       label(for="title") Title
       input#title(type="text", name="title" autocomplete="off")
       label(for="text") Message

@@ -7,6 +7,10 @@ aside {
   background-color: var(--color-gamma);
   display: grid;
   grid-auto-rows: 50px;
+  align-self: start;
+  height: 100svh;
+  position: sticky;
+  top: 0;
 }
 
 aside > a,
@@ -24,7 +28,7 @@ aside > a:hover {
 
 main {
   display: grid;
-  padding: 20px;
+  padding: 20px 100px 0px 100px;
   grid-template-rows: 50px 1fr 100px;
   gap: 20px;
 }
@@ -33,4 +37,12 @@ main {
   display: grid;
   grid-auto-rows: 40px;
   gap: 10px;
+}
+
+.new-message-box {
+  position: sticky;
+  background-color: white;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
 }
