@@ -1,11 +1,13 @@
 extends panel_layout
 
 block panel 
-  if currentUser && !currentUser.is_member && currentUser.username === user.username
-    a(href=`/become-member/${currentUser._id}`) Become Member
+  if currentUser && currentUser.username === user.username
+    a(href=`/become-member/${currentUser._id}`) Manage Membership
 block content 
   h1= title
   .user-info 
     p @#{user.username}
     p= user.full_name
     p= user.is_member ? 'Member' : 'Visitor'
+    if user.is_admin
+      p Admin

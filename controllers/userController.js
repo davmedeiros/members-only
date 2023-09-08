@@ -90,12 +90,18 @@ exports.user_become_member_post = [
     .isLength({ min: 6, max: 6 })
     .escape()
     .withMessage('Club codes are composed of 6 characters.'),
+  body('admin')
+    .trim()
+    .isLength({ min: 6, max: 6 })
+    .escape()
+    .withMessage('Club codes are composed of 6 characters.'),
 
   asyncHandler(async (req, res, next) => {
     const errors = validationResult(req);
 
     const user = new User({
       is_member: req.body.code === process.env.SECRET_CODE,
+      is_admin: req.body.admin === process.env.ADMIN_CODE,
       _id: req.params.id,
     });
 

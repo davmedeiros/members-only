@@ -5,6 +5,8 @@ block content
   form(action="", method="post") 
     label(for="code") Club Code
     input#code(type="text", name="code")
+    label(for="admin") Admin Code
+    input#admin(type="text", name="admin")
     button(type="submit") Confirm
   if errors
     ul
