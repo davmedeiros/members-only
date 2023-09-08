@@ -10,7 +10,7 @@ block content
         h2= message.title 
         p= message.timestamp
         p= message.text 
-        p By @#{message.user.username}
+        p By @#{currentUser.is_member ? message.user.username : '---'}
   form(action="", method="post")
     fieldset 
       label(for="title") Title
