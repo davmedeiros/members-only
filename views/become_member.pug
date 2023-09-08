@@ -2,6 +2,7 @@ extends minimalist_layout
 
 block content 
   h1= title 
+  p Leaving a field blank or entering a wrong code will cancel that membership.
   form(action="", method="post") 
     label(for="code") Club Code
     input#code(type="text", name="code")

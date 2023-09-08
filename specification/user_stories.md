@@ -14,7 +14,7 @@
 
 ## Update
 
-- [ ] Any user can change their name, username, password and cancel their membership.
+- [x] Any user can cancel their membership.
 - [x] Any user can enter a club code to become a member.
 
 ## Delete
